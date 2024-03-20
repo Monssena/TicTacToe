@@ -1,6 +1,7 @@
-package org.example;
+package org.game;
 
-import org.example.engine.*;
+import org.game.engine.*;
+
 
 public class TicTacToeGame extends Game {
 
@@ -55,6 +56,7 @@ public class TicTacToeGame extends Game {
         if (model[x][y] != 0 || isGameStopped) return;
         setSignAndCheck(x, y);
         currentPlayer = 3 - currentPlayer;
+        if (isGameStopped) return;
         computerTurn();
         currentPlayer = 3 - currentPlayer;
     }
@@ -67,7 +69,6 @@ public class TicTacToeGame extends Game {
             if (currentPlayer == 1) {
                 showMessageDialog(Color.NONE, "You Win!", Color.GREEN, 75);
             } else showMessageDialog(Color.NONE, "Game Over", Color.RED, 75);
-            return;
         }
         if (!hasEmptyCell()) {
             isGameStopped = true;

@@ -1,4 +1,4 @@
-package org.example.engine;
+package org.game.engine;
 
 import java.awt.Component;
 import java.awt.Dimension;

@@ -1,4 +1,4 @@
-package org.example.engine;
+package org.game.engine;
 public enum Color {
     NONE,
     BLACK,
