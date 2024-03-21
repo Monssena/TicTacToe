@@ -69,7 +69,7 @@ public class Game implements GameScreen {
         this.mapColors();
         this.initialize();
         jFrame.addKeyListener(new GameKeyListener());
-        jFrame.setTitle("JavaRush Game");
+        jFrame.setTitle("Monssena Game");
         jFrame.setResizable(false);
         jFrame.setUndecorated(true);
         jFrame.getContentPane().add(this.createSwingContent(), "Center");

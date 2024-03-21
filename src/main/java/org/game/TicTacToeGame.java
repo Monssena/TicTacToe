@@ -34,6 +34,7 @@ public class TicTacToeGame extends Game {
         } else setCellValueEx(x, y, Color.WHITE, "O", Color.BLUE);
     }
 
+    //обновление отображения игры
     public void updateView() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -42,6 +43,7 @@ public class TicTacToeGame extends Game {
         }
     }
 
+    //обработка нажатий клавиш
     public void onKeyPress(Key key) {
         if (key == Key.SPACE && isGameStopped) {
             startGame();
@@ -52,6 +54,7 @@ public class TicTacToeGame extends Game {
         }
     }
 
+    //обработка щелчков мыши
     public void onMouseLeftClick(int x, int y) {
         if (model[x][y] != 0 || isGameStopped) return;
         setSignAndCheck(x, y);
@@ -61,6 +64,7 @@ public class TicTacToeGame extends Game {
         currentPlayer = 3 - currentPlayer;
     }
 
+    //установка символа в ячейку и проверка на победу
     public void setSignAndCheck(int x, int y) {
         model[x][y] = currentPlayer;
         updateView();
@@ -76,6 +80,7 @@ public class TicTacToeGame extends Game {
         }
     }
 
+    //ход компьютера
     public void computerTurn() {
         if (model[1][1] == 0) {
             setSignAndCheck(1, 1);
@@ -107,6 +112,7 @@ public class TicTacToeGame extends Game {
         }
     }
 
+    //проверка возможности выигрыша
     public boolean checkFutureWin(int x, int y, int n) {
         int tmp = model[x][y];
         model[x][y] = n;
@@ -119,6 +125,7 @@ public class TicTacToeGame extends Game {
         }
     }
 
+    //проверка наличия пустых ячеек
     public boolean hasEmptyCell() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -128,6 +135,7 @@ public class TicTacToeGame extends Game {
         return false;
     }
 
+    //проверка на победу
     public boolean checkWin(int x, int y, int n) {
 //        for (int i = 0; i < 3; i++) {
 //            int vertically = 0;
